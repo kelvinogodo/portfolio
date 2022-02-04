@@ -1,0 +1,820 @@
+*{
+    border: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    margin: 0%;
+}
+html{
+    scroll-behavior: smooth;
+}
+header{
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0.945) 60%,#500133 30%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 20vh;
+    background-color: white;
+    position: sticky;
+}
+.logo-container{
+    width: 30%;
+    /* background-color: white; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 50px;
+}
+.logo{
+    height: 50px;
+    width: 50px;
+    max-width: 100%;
+    object-fit: contain;
+}
+.navbar{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.menu-container{
+    display: none;
+}
+.menu-list{
+    display: none;
+    overflow-x: hidden;
+}
+.navlist{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    list-style-type: none;
+}
+.tab a{
+    text-decoration: none;
+    font-family: varela round;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    color: white;
+}
+
+.landpage{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0.945) 60%,#500133 30%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.welcome-text-container{
+    width: 40%;
+    /* background-color: green; */
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.intro-header{
+    font-size: 2.5rem;
+    font-family: poppins;
+    text-transform: capitalize;
+    color: white;
+}
+.a{
+    text-transform:lowercase ;
+}
+.intro-details{
+    color: white;
+    font-family: roboto;
+    line-height: 25px;
+    font-size: 1.2rem;
+}
+.fullstack{
+    color: yellow;
+}
+.hire-btn{
+    margin-right: auto;
+
+}
+/* From cssbuttons.io by @adamgiebl */
+.cssbuttons-io-button {
+    background: #500133;
+    color: white;
+    font-family: varela round;
+    text-transform: capitalize;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #140370;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+   }
+
+   .cssbuttons-io-button .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #140370;
+    right: 0.3em;
+    transition: all 0.3s;
+   }
+
+   .cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+   }
+
+   .cssbuttons-io-button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #7b52b9;
+   }
+
+   .cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+   }
+
+   .cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+   }
+   .cssbuttons-io-button{
+       align-self: flex-start;
+   }
+
+
+   .img-container{
+       width: 50%;
+   }
+   .img-container img{
+       max-width: 100%;
+
+   }
+   .about-section{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       height: 100vh;
+       width: 100%;
+       background: linear-gradient(rgba(0, 0, 0, 0.945) 10%,#010127 90%);
+   }
+   .profile-pix-container{
+       height: 100%;
+       width: 50%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+   .picture-wrapper{
+    height: 300px;
+       width: 300px;
+       border:5px solid #8a0358 ;
+       border-radius: 50%;
+   }
+   .profile-pix{
+       height: 300px;
+       width: 300px;
+       border-radius:50% ;
+       margin-top: -20px;
+       margin-left: 20px;
+       max-width: 100%;
+       object-fit: cover;
+       z-index: 2;
+   }
+   .about-us-text{
+       width: 50%;
+       height: 90%;
+       display: flex;
+       align-items: center;
+       justify-content: space-around;
+        flex-direction: column;
+   }
+   .about-us-text h1{
+       font-size: 2rem;
+       color: white;
+       border-bottom: 5px solid #720249;
+       font-family: varela round;
+       text-transform: capitalize;
+       align-self: flex-start;
+       padding-bottom: 5px;
+   }
+   .about-us-text p:first-of-type{
+       margin-bottom: -60px;
+   }
+   .about-us-text p{
+       color: white;
+       font-family: roboto;
+       font-size: 1.2rem;
+       line-height: 25px;
+       width:80%;
+       align-self: flex-start;
+   }
+   .about-us-text button{
+       align-self: flex-start;
+   }
+
+/* From cssbuttons.io by @Custyyyy */
+.button {
+    display: inline-block;
+    border-radius: 7px;
+    border: none;
+    background: #97045f;
+    color: white;
+    font-family: inherit;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0px 14px 56px -11px #1875FF;
+    width: 10em;
+    padding: 1em;
+    transition: all 0.4s;
+    cursor: pointer;
+    font-family: varela round;
+   }
+
+   .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+   }
+
+   .button span:after {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.7s;
+   }
+
+   .button:hover span {
+    padding-right: 1.55em;
+   }
+
+   .button:hover span:after {
+    opacity: 4;
+    right: 0;
+   }
+   .service-section{
+       height: auto;
+       display: flex;
+       align-self: center;
+       justify-content: center;
+       flex-direction:column ;
+       background-color: #010127;
+       width: 100%;
+   }
+   .service-header{
+       width: 63%;
+       margin: auto;
+   }
+   .service-header h1{
+    font-family: varela round;
+    padding-bottom:15px ;
+    text-transform: capitalize;
+    width: 150px;
+    color: white;
+    margin: 10px;
+    border-bottom: 4px solid rgb(153, 3, 108);
+   }
+   .service-header p{
+       margin: 10px;
+      font-family: roboto;
+      line-height: 25px;
+      font-size: 1.2rem;
+      color: white;
+      width: 70%;
+   }
+   .service-card-container{
+       height: 70%;
+       margin: auto;
+       display: flex;
+       width: 100%;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+   }
+   .top-card{
+    height: 50%;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+   .lower-card{
+       height: 50%;
+       width: 100%;
+       display:flex ;
+       padding: 10px;
+       align-items: center;
+       justify-content: center;
+   }
+   .card{
+       height: 400px;
+       width: 400px;
+       background-color: rgb(39, 187, 9);
+       display: flex;
+       margin: 10px;
+       background-image: url(../images/contact-us-customer-support-hotline-people-connect-call-customer-support_36325-1640.jpg);
+       background-repeat: no-repeat;
+       background-size: cover;
+
+       position: relative;
+   }
+   .card::after{
+       height: 100%;
+       position: absolute;
+       width: 100%;
+       content: "";
+       background-color: rgb(10, 2, 59);
+       mix-blend-mode: overlay;
+   }
+   .card1::after{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    content: "";
+    background-color: rgb(110, 7, 70);
+    mix-blend-mode: overlay;
+}
+.card2::after{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    content: "";
+    background-color: rgb(8, 2, 44);
+    mix-blend-mode: overlay;
+}
+.card4::after{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    content: "";
+    background-color: rgb(4, 77, 64);
+    mix-blend-mode: overlay;
+}
+.card4::after{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    content: "";
+    background-color: rgba(5, 209, 216, 0.815);
+    mix-blend-mode: overlay;
+}
+.card-body1{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 0, 0.767);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card-body2{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(245, 4, 173, 0.808);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card-body3{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(37, 240, 47, 0.746);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card-body4{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(2, 150, 248, 0.657);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card-img{
+    width: 200px;
+    height: 200px;
+    align-self: flex-start;
+    /* background-color: white; */
+    object-fit: cover;
+}
+
+.card-img-container{
+    width: 80%;
+}
+.card h2{
+    color: white;
+    width: 80%;
+    font-family: poppins;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    text-shadow:0px 0px 15px #a8a8a8;
+}
+.card p{
+    font-family: roboto;
+    color: white;
+    width: 80%;
+    line-height: 25px;
+}
+.contact-section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+}
+.top-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+}
+.top-btn h3{
+    color: rgb(4, 5, 77);
+    font-family: roboto;
+    text-transform: capitalize;
+    width: 30%;
+    margin-left: -100px;
+}
+ .price-card-container{
+    height: auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ .prize-card{
+    padding: 40px;
+    width: 350px;
+    margin: 20px;
+    border-radius: 5px;
+}
+.prize-card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.banner{
+    height: 120px;
+    width: 120px;
+    object-fit: contain;
+}
+.prize{
+    color: white;
+    font-family: poppins;
+    width: 70%;
+    text-transform: capitalize;
+}
+.prize-container{
+    width: 90%;
+    margin-top: 20px;
+}
+.thicked{
+    width: 30%;
+    max-height: 100%;
+}
+.prize-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid rgb(110, 109, 109);
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.prize-list a{
+    width: 90%;
+    text-decoration: none;
+    color: white;
+    font-family: roboto;
+    text-transform: capitalize;
+}
+.small-text{
+    font-size: .9rem;
+}
+ .prizecard1{
+    background-color: rgb(7, 1, 44);
+}
+.prizecard2{
+    background-color: rgba(245, 4, 173, 0.808);
+}
+.prizecard3{
+    background-color: rgb(7, 1, 44);
+}
+.foot1{
+    width: 30%;
+}
+.emmy{
+    text-transform: uppercase;
+}
+.foot1 h2{
+    color: white;
+    font-family: poppins;
+    margin-bottom: 15px;
+    border-bottom: 5px solid rgba(180, 6, 128, 0.808);
+    width: 180px;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+}
+.foot1 p{
+    line-height: 25px;
+    font-family: roboto;
+    color: white;
+    font-size: 1.1rem;
+}
+.social-media-handle{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 40%;
+    width: 100%;
+    padding: 10px;
+    align-self: flex-start;
+    background-color: rgb(196, 6, 139);
+    margin-top: 30px;
+}
+.social-icon{
+   height: 50%;
+   width: 10%;
+    object-fit: contain;
+}
+.foot1 li{
+    /* height: 10%; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    /* background-color: chartreuse; */
+}
+.foot1 a{
+    color: white;
+    width: 80%;
+    text-decoration: none;
+    font-family: varela round;
+}
+.input{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    text-indent: 20px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    font-family: varela round;
+    font-size: 1.2rem;
+}
+.my-img{
+    height:40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+footer{
+    background-color: #010127;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+
+@media screen and (max-width:900px){
+    .menu-container{
+        width: 60px;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    .menu-line{
+        height: 4px;
+        width: 35px;
+        border-radius: 5px;
+        background-color: white;
+        margin: 3px;
+    }
+    .navbar{
+        width: 0%;
+        overflow-x: hidden;
+    }
+    .search-container{
+        display: none;
+    }
+    .menu-list{
+        width: 0%;
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background:#500133d2;
+        height: 100%;
+        z-index: 100;
+        overflow-x: hidden;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        transition: .5s ease-in-out;
+    }
+
+    .list-items{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        height: 60%;
+    }
+    .menu-list li{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-list a{
+        width: 80%;
+        text-align: left;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-family: ubuntu;
+    }
+    .menu-list-login{
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 40%;
+        overflow-x: hidden;
+        background-color: #500133c4;
+        padding: 10px;
+    }
+    .close-btn{
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 10px;
+        margin-left: auto;
+        cursor: pointer;
+    }
+    .navbar{
+        display: none;
+    }
+
+
+    .landpage{
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    .img-container{
+        width: auto;
+    }
+    .welcome-text-container{
+        width: 100%;
+        height: auto;
+    }
+    .intro-header{
+        text-align: center;
+        font-size: 2rem;
+        width: 90%;
+        margin-top: 10px;
+    }
+    .intro-details{
+        text-align: center;
+        padding: 10px;
+        width: 90%;
+    }
+    .cssbuttons-io-button{
+        margin: auto;
+        margin-top: 20px;
+    }
+    .about-section{
+        flex-direction: column;
+        height: auto;
+        padding-top: 100px;
+    }
+    .profile-pix-container{
+        width: 100%;
+    }
+    .picture-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .profile-pix{
+        object-fit: cover;
+        margin: 0px;
+        max-width: 100%;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+    }
+    .about-us-text{
+        width: 95%;
+        text-align: center;
+        height: auto;
+    }
+    .about-us-text h1{
+        margin: auto;
+        margin-top: 30px;
+    }
+    .about-us-text p{
+        width: 90%;
+        height: auto;
+        margin: auto;
+        margin-top: 70px;
+    }
+    .button{
+        margin: auto;
+        margin-top: 40px;
+    }
+    .service-section{
+        height: auto;
+    }
+    .service-header{
+        width: 90%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+    .service-header h1{
+        width: 50%;
+    }
+    .service-header p{
+        width: 90%;
+    }
+    .service-card-container{
+        height: auto;
+    }
+    .top-card{
+        flex-direction: column-reverse;
+    }
+    .lower-card{
+        flex-direction: column-reverse;
+    }
+    .contact-section{
+        overflow-x: scroll;
+    }
+    .card{
+        width: 95%;
+    }
+    .top-btn{
+        flex-direction: column;
+        height: auto;
+    }
+    .top-btn h3{
+        width: 70%;
+    }
+    .price-card-container{
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .prize-card{
+        width: 100%;
+    }
+    .foot1{
+        width: 80%;
+        margin-top: 20px;
+    }
+    footer{
+        flex-direction: column;
+    }
+}
