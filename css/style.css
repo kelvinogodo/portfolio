@@ -469,17 +469,16 @@ header{
     align-items: center;
     justify-content: center;
 } 
- .prize-card{
-    padding: 40px;
-    width: 350px;
-    margin: 20px;
-    border-radius: 5px;  
-} 
+ 
 .prize-card{
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
+    padding: 40px;
+    width: 400px;
+    margin: 20px;
+    border-radius: 5px; 
 }
 .banner{
     height: 120px;

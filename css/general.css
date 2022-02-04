@@ -1,0 +1,150 @@
+*{
+    border: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    margin: 0%;
+}
+html{
+    scroll-behavior: smooth;
+}
+header{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 20vh;
+    width: 100%;
+    /* background-color: white; */
+    position: sticky;
+}
+.logo-container{
+    width: 30%;
+    /* background-color: white; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 50px;
+}
+.logo{
+    height: 50px;
+    width: 50px;
+    max-width: 100%;
+    object-fit: contain;
+}
+.navbar{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.menu-container{
+    display: none;
+}
+.menu-list{
+    display: none;
+    overflow-x: hidden;
+}
+.navlist{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    list-style-type: none;
+}
+.tab a{
+    text-decoration: none;
+    font-family: varela round;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    color: white;
+}
+@media screen and (max-width:900px){
+    .menu-container{
+        width: 60px;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    .menu-line{
+        height: 4px;
+        width: 35px;
+        border-radius: 5px;
+        background-color: white;
+        margin: 3px;
+    }
+    .navbar{
+        width: 0%;
+        overflow-x: hidden;
+    }
+    .search-container{
+        display: none;
+    }
+    .menu-list{
+        width: 0%;
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background:#500133d2;
+        height: 100%;
+        z-index: 100;
+        overflow-x: hidden;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        transition: .5s ease-in-out;
+    }
+    
+    .list-items{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        height: 60%;
+    }
+    .menu-list li{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+   
+    .menu-list a{
+        width: 80%;
+        text-align: left;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-family: ubuntu;
+    }
+    .menu-list-login{
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 40%;
+        overflow-x: hidden;
+        background-color: #500133c4;
+        padding: 10px;
+    }
+    .close-btn{
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 10px;
+        margin-left: auto;
+        cursor: pointer;
+    }
+    .navbar{
+        display: none;
+    }    
+}
