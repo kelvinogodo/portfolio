@@ -618,6 +618,7 @@ footer{
         justify-content: center;
         flex-direction: column;
         cursor: pointer;
+     
     }
     .menu-line{
         height: 4px;
@@ -647,6 +648,7 @@ footer{
         justify-content: space-around;
         flex-direction: column;
         transition: .5s ease-in-out;
+        z-index: 200;
     }
     
     .list-items{
@@ -683,7 +685,7 @@ footer{
         font-family: ubuntu;
     }
     .arrow{
-        width: 10%;
+        width: 5%;
         margin-left: auto;
         max-height: 80%;
         object-fit: contain;
