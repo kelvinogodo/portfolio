@@ -476,11 +476,7 @@ header{
     flex-direction: column;
     justify-content: space-around;
     padding: 40px;
-    /* width: 500px; */
     margin: 20px;
-    border-radius: 5px; 
-}
-.banner{
     height: 120px;
     width: 120px;
     object-fit: contain;
