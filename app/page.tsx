@@ -47,7 +47,7 @@ export default function Home() {
                 <li key={r.text}>
                   <span className="record-text">{r.text}</span>
                   {r.link ? (
-                    <a className="record-link" href={`https://${r.link}`} rel="noopener">
+                    <a className="btn btn-sm" href={`https://${r.link}`} target="_blank" rel="noopener noreferrer">
                       {r.link}
                     </a>
                   ) : (

@@ -1,6 +1,9 @@
 import type { Entry } from "@/data/entries";
 
 export default function EntryBlock({ entry }: { entry: Entry }) {
+  const liveLinks = entry.fields.filter((f) => f.href);
+  const fields = entry.fields.filter((f) => !f.href);
+
   return (
     <section className="entry" id={`entry-${entry.id}`} aria-labelledby={`t-${entry.id}`}>
       <div className="entry-head">
@@ -35,21 +38,26 @@ export default function EntryBlock({ entry }: { entry: Entry }) {
               <p>{entry.notice.text}</p>
             </div>
           )}
+
+          {liveLinks.length > 0 && (
+            <div className="actions">
+              {liveLinks.map((f) => (
+                <div className="action" key={f.label}>
+                  <p className="action-label">{f.label}</p>
+                  <a className="btn" href={f.href} target="_blank" rel="noopener noreferrer">
+                    {f.value}
+                  </a>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         <dl className="fields">
-          {entry.fields.map((f) => (
+          {fields.map((f) => (
             <div className="field" key={f.label}>
               <dt>{f.label}</dt>
-              <dd className={f.kind === "plain" ? "plain" : f.kind === "private" ? "plain private" : undefined}>
-                {f.href ? (
-                  <a href={f.href} rel="noopener">
-                    {f.value}
-                  </a>
-                ) : (
-                  f.value
-                )}
-              </dd>
+              <dd className={f.kind === "plain" ? "plain" : f.kind === "private" ? "plain private" : undefined}>{f.value}</dd>
             </div>
           ))}
         </dl>
