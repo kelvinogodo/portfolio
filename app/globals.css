@@ -142,7 +142,7 @@ h1 {
 }
 .band.dark a:not(.btn) { color: var(--ink); }
 .band.dark a:focus-visible { outline-color: var(--ink); }
-.band.dark .numeral { color: #2B3038; }
+.band.dark .numeral { color: #454C58; }
 
 /* ---------- Entry ---------- */
 .entry { scroll-margin-top: 96px; }
@@ -180,7 +180,7 @@ h2 {
   font-size: clamp(3.5rem, 9vw, 7rem);
   line-height: 0.8;
   letter-spacing: -0.03em;
-  color: var(--line);
+  color: #BDB6A6;
   font-variant-numeric: lining-nums;
   user-select: none;
 }
