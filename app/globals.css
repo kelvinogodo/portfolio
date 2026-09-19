@@ -108,6 +108,11 @@ h1 {
 }
 .throughline p { margin: 0 0 1.25em; }
 .throughline p:last-child { margin-bottom: 0; }
+.identity-actions { margin-top: 36px; }
+/* the header is already Ink, so the hover fill inverts to Paper */
+.identity .btn { background-image: linear-gradient(#ECE9E2, #ECE9E2); }
+.identity .btn:hover { border-color: #ECE9E2; color: #14171C; }
+.identity .btn:focus-visible { outline-color: #ECE9E2; }
 
 /* the one graphic device: large fingerprint ridge field */
 .ridges {

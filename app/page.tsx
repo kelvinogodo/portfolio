@@ -30,6 +30,11 @@ export default function Home() {
                 <p key={p}>{p}</p>
               ))}
             </div>
+            <div className="identity-actions resolve" style={{ ["--i" as string]: 4 }}>
+              <a className="btn" href={CV_PATH} download={CV_FILENAME}>
+                Download CV
+              </a>
+            </div>
           </div>
         </header>
 
