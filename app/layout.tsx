@@ -27,7 +27,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Kelvin Ogodo",
   description:
-    "Kelvin Ogodo, builder, engineer, founder. A registry of ventures: Identris Systems, Nkowa, government portals, membership and real estate platforms, and a trading system.",
+    "Kelvin Ogodo, builder, engineer, founder. The ventures I run and the systems I have built: Identris Systems, Nkowa, government portals, membership and real estate platforms, and a trading system.",
   openGraph: {
     title: "Kelvin Ogodo",
     description: "builder. engineer. founder.",

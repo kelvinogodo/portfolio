@@ -26,7 +26,7 @@ export const CV_FILENAME = "Kelvin_Ogodo_CV.pdf";
 export const GITHUB = "github.com/kelvinogodo";
 
 export const throughline =
-  "Mostly self taught since 2020. The basics of programming, and a learning environment that made the rest possible, came from Listacc Tech Academy. No computer science degree. What connects the entries below is one instinct: an idea does not stay an idea long once it reaches him, whether it lands as code, a clothing brand, or a trading system built against a real account.";
+  "I have been mostly self taught since 2020. Listacc Tech Academy gave me the basics of programming and an environment that made learning easy, and I have no computer science degree. What connects the entries below is one instinct: an idea does not stay an idea long once it reaches me, whether it lands as code, a clothing brand, or a trading system built against a real account.";
 
 export const entries: Entry[] = [
   {
@@ -37,7 +37,7 @@ export const entries: Entry[] = [
     ],
     notice: {
       tag: "Access",
-      text: "This is closed government infrastructure, not public code, which is normal for work like this. No live link for it, and none should ever be added. What is public is the company's own site.",
+      text: "This is closed government infrastructure, not public code, which is normal for work like this, so there is no live link for it. What is public is the company's own site.",
     },
     strip: [
       { label: "Coverage", value: "13 local government areas" },
@@ -61,8 +61,8 @@ export const entries: Entry[] = [
     id: "002",
     title: "Nkowa",
     paragraphs: [
-      "A fashion brand and its full digital backbone, built by one person.",
-      "Nkowa exists to bring misunderstood, misconceived, and neglected parts of Igbo culture to light through fashion. That is not a tagline, it is the actual brief behind the brand. Kelvin built the brand identity, then the full commerce infrastructure himself: storefront, order and inventory system, and the admin dashboard running the business day to day.",
+      "A fashion brand and its full digital backbone, built by me.",
+      "Nkowa exists to bring misunderstood, misconceived, and neglected parts of Igbo culture to light through fashion. That is not a tagline, it is the actual brief behind the brand. I built the brand identity, then the full commerce infrastructure myself: storefront, order and inventory system, and the admin dashboard running the business day to day.",
     ],
     fields: [
       { label: "Role", value: "Founder, and the engineer who shipped it", kind: "plain" },
