@@ -71,7 +71,7 @@ export default function Home() {
               <div className="field">
                 <dt>GitHub</dt>
                 <dd>
-                  <a href={`https://${GITHUB}`} rel="noopener">
+                  <a href={`https://${GITHUB}`} target="_blank" rel="noopener noreferrer">
                     {GITHUB}
                   </a>
                 </dd>
