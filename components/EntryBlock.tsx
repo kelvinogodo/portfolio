@@ -1,4 +1,7 @@
+import type { CSSProperties } from "react";
 import type { Entry } from "@/data/entries";
+
+const step = (i: number) => ({ ["--i" as string]: i }) as CSSProperties;
 
 export default function EntryBlock({ entry }: { entry: Entry }) {
   const liveLinks = entry.fields.filter((f) => f.href);
@@ -6,20 +9,24 @@ export default function EntryBlock({ entry }: { entry: Entry }) {
 
   return (
     <section className="entry" id={`entry-${entry.id}`} aria-labelledby={`t-${entry.id}`}>
-      <div className="entry-head">
+      <div className="entry-head" data-reveal>
         <div>
-          <p className="entry-label">ENTRY {entry.id}</p>
-          <h2 id={`t-${entry.id}`}>{entry.title}</h2>
+          <p className="entry-label rv" style={step(0)}>
+            ENTRY {entry.id}
+          </p>
+          <h2 id={`t-${entry.id}`} className="rv" style={step(1)}>
+            {entry.title}
+          </h2>
         </div>
-        <div className="numeral" aria-hidden="true">
+        <div className="numeral rv" style={step(2)} aria-hidden="true">
           {entry.id}
         </div>
       </div>
 
       {entry.strip && (
-        <div className="strip">
-          {entry.strip.map((c) => (
-            <div className="cell" key={c.label}>
+        <div className="strip" data-reveal>
+          {entry.strip.map((c, i) => (
+            <div className="cell rv" key={c.label} style={step(i)}>
               <p className="cell-label">{c.label}</p>
               <p className="cell-value">{c.value}</p>
             </div>
@@ -27,8 +34,8 @@ export default function EntryBlock({ entry }: { entry: Entry }) {
         </div>
       )}
 
-      <div className="body">
-        <div className="prose">
+      <div className="body" data-reveal>
+        <div className="prose rv" style={step(0)}>
           {entry.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
@@ -54,8 +61,8 @@ export default function EntryBlock({ entry }: { entry: Entry }) {
         </div>
 
         <dl className="fields">
-          {fields.map((f) => (
-            <div className="field" key={f.label}>
+          {fields.map((f, i) => (
+            <div className="field rv" key={f.label} style={step(i + 1)}>
               <dt>{f.label}</dt>
               <dd className={f.kind === "plain" ? "plain" : f.kind === "private" ? "plain private" : undefined}>{f.value}</dd>
             </div>
@@ -64,11 +71,11 @@ export default function EntryBlock({ entry }: { entry: Entry }) {
       </div>
 
       {entry.flow && (
-        <div className="flow-wrap">
+        <div className="flow-wrap" data-reveal>
           <p className="flow-title">Enrollment path, field to backend</p>
           <div className="flow">
-            {entry.flow.map((s) => (
-              <div className="stage" key={s.title}>
+            {entry.flow.map((s, i) => (
+              <div className="stage rv" key={s.title} style={step(i + 1)}>
                 <h3>{s.title}</h3>
                 <p className="where">{s.where}</p>
                 <ul>

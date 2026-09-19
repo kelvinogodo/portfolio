@@ -1,11 +1,13 @@
 import EntryBlock from "@/components/EntryBlock";
 import IndexRail from "@/components/IndexRail";
+import Motion from "@/components/Motion";
 import Ridges from "@/components/Ridges";
 import { CONTACT_EMAIL, CV_FILENAME, CV_PATH, GITHUB, entries, throughline } from "@/data/entries";
 
 export default function Home() {
   return (
     <div className="frame">
+      <Motion />
       <IndexRail ids={entries.map((e) => e.id)} />
 
       <main>

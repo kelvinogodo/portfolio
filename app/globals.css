@@ -53,7 +53,8 @@ a:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
   font-family: var(--mono); font-size: 12px; color: var(--steel);
   text-decoration: none; padding: 3px 0;
 }
-.rail a::before { content: ""; width: 0; height: 1px; background: var(--signal); }
+.rail a { transition: color 160ms; }
+.rail a::before { content: ""; width: 0; height: 1px; background: var(--signal); transition: width 240ms cubic-bezier(.2,.7,.2,1); }
 .rail a:hover { color: var(--ink); }
 .rail a[aria-current="true"] { color: var(--signal); font-weight: 500; }
 .rail a[aria-current="true"]::before { width: 14px; }
@@ -111,7 +112,7 @@ h1 {
   position: absolute;
   right: -120px; top: 50%;
   width: 760px; height: 760px;
-  transform: translateY(-50%);
+  transform: translateY(calc(-50% + var(--py, 0px)));
   z-index: 0;
   pointer-events: none;
 }
@@ -145,7 +146,15 @@ h1 {
   align-items: flex-end;
   gap: 24px;
   padding-bottom: 20px;
-  border-bottom: 1px solid var(--ink);
+  position: relative;
+}
+.entry-head::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: var(--ink);
+  transform-origin: left;
 }
 .entry-label { font-family: var(--mono); font-size: 12px; margin: 0; font-weight: 500; }
 .entry-head h2 { margin-top: 14px; }
@@ -212,7 +221,10 @@ h2 {
   display: inline-block;
   max-width: 100%;
   padding: 14px 22px;
-  background: var(--signal);
+  background-color: var(--signal);
+  background-image: linear-gradient(var(--ink), var(--ink));
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
   color: #ECE9E2;
   font-family: var(--mono);
   font-size: 14px;
@@ -221,9 +233,9 @@ h2 {
   text-decoration: none;
   border: 1px solid var(--signal);
   overflow-wrap: anywhere;
-  transition: background-color 120ms, color 120ms, border-color 120ms;
+  transition: background-size 300ms cubic-bezier(.2,.7,.2,1), color 200ms, border-color 200ms;
 }
-.btn:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.btn:hover { background-size: 100% 100%; border-color: var(--ink); color: var(--paper); }
 .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
 /* flow diagram */
@@ -264,9 +276,29 @@ h2 {
   }
   @keyframes draw { to { stroke-dashoffset: 0; } }
 }
+@media (prefers-reduced-motion: no-preference) {
+  /* ambient: the print breathes very slightly */
+  .ridges { animation: breathe 18s ease-in-out infinite alternate; }
+  @keyframes breathe { to { scale: 1.04; } }
+
+  /* scroll reveals, applied only once Motion.tsx has run (never hides anything without JS) */
+  .motion .entry-head::after { transition: transform 1000ms cubic-bezier(.65, 0, .2, 1); }
+  .motion .entry-head.reveal-pending::after { transform: scaleX(0); }
+
+  .motion [data-reveal] .rv {
+    transition: opacity 800ms ease, transform 800ms cubic-bezier(.2, .7, .2, 1);
+    transition-delay: calc(var(--i, 0) * 110ms + 150ms);
+  }
+  .motion [data-reveal].reveal-pending .rv { opacity: 0; transform: translateY(18px); }
+
+  .motion .flow::before { transform-origin: left; transition: transform 1200ms cubic-bezier(.65, 0, .2, 1) 200ms; }
+  .motion .flow-wrap.reveal-pending .flow::before { transform: scaleX(0); }
+  .motion .stage::before { transition: transform 450ms cubic-bezier(.2, .7, .2, 1); transition-delay: calc(var(--i, 1) * 260ms + 250ms); }
+  .motion .flow-wrap.reveal-pending .stage::before { transform: scale(0); }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .marker-fill { transition: none; }
+  .marker-fill, .btn, .rail a, .rail a::before { transition: none; }
 }
 
 /* ---------- Tablet ---------- */
@@ -293,7 +325,8 @@ h2 {
   .fields { grid-template-columns: 1fr; display: block; }
   .flow-wrap { padding: 24px 16px 28px; }
   .flow { grid-template-columns: 1fr; gap: 28px; }
-  .flow::before { left: 7px; right: auto; top: 0; bottom: 0; width: 1px; height: auto; }
+  .flow::before { left: 7px; right: auto; top: 0; bottom: 0; width: 1px; height: auto; transform-origin: top; }
+  .motion .flow-wrap.reveal-pending .flow::before { transform: scaleY(0); }
   .stage { padding: 0 0 0 32px; }
   .stage::before { position: absolute; left: 0; top: 0; margin: 0; }
   .contact .field { grid-template-columns: 1fr; gap: 4px; }
