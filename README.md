@@ -2,6 +2,8 @@
 
 A registry of ventures. Each project is an entry with a reference number, from government biometric infrastructure to a fashion brand named for the Igbo word for identity.
 
+Live: https://portfolio-ten-delta-9kdo1xiyz9.vercel.app
+
 Static Next.js site (App Router, TypeScript). No backend. Content lives in `data/entries.ts`.
 
 ## Run
