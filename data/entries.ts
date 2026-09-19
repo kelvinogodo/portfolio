@@ -84,14 +84,12 @@ export const entries: Entry[] = [
   },
   {
     id: "004",
-    title: "NIBE Membership Platform",
-    paragraphs: [
-      "Full-stack membership platform for the Nigerian Institute for Biomedical Engineering. Member registration, CPD course information, member profiles, referral tracking, and a blog and resource library the institute runs as its own content.",
-    ],
+    title: "Cartly",
+    paragraphs: ["An e-commerce storefront built to practice full-stack checkout flows."],
     fields: [
-      { label: "Role", value: "Builder, frontend and backend", kind: "plain" },
-      { label: "Stack", value: "React on the frontend, Node.js and Express on the backend, MongoDB" },
-      { label: "Live", value: "biotech-project-frontend.vercel.app", href: "https://biotech-project-frontend.vercel.app" },
+      { label: "Role", value: "Builder", kind: "plain" },
+      { label: "Stack", value: "React, Supabase" },
+      { label: "Live", value: "cartly-kohl.vercel.app", href: "https://cartly-kohl.vercel.app" },
     ],
   },
   {
@@ -118,12 +116,56 @@ export const entries: Entry[] = [
       { label: "Live", value: "None. This runs against a trading account, not a browser.", kind: "private" },
     ],
   },
-];
-
-export const furtherRecord: { text: string; link?: string }[] = [
-  { text: "An interactive e-learning platform with course browsing and lead capture, Next.js and MongoDB", link: "product-x-six.vercel.app" },
-  { text: "An e-commerce storefront built to practice full-stack checkout flows, React and Supabase", link: "cartly-kohl.vercel.app" },
-  { text: "A final year IoT security system streaming live video and motion alerts off an ESP32 camera in real time", link: "finalyearproject-frontend-ten.vercel.app" },
-  { text: "A first blockchain project, a hash lock dApp on Nervos CKB, built to learn the Cell model directly" },
-  { text: "A memory matching game built for the MightyMeld hackathon", link: "mightymeld-hackathon-delta.vercel.app" },
+  {
+    id: "007",
+    title: "Interactive E-Learning Platform",
+    paragraphs: ["An interactive e-learning platform with course browsing and lead capture."],
+    fields: [
+      { label: "Role", value: "Builder", kind: "plain" },
+      { label: "Stack", value: "Next.js, MongoDB" },
+      { label: "Live", value: "product-x-six.vercel.app", href: "https://product-x-six.vercel.app" },
+    ],
+  },
+  {
+    id: "008",
+    title: "Final Year IoT Security System",
+    paragraphs: ["A final year IoT security system streaming live video and motion alerts off an ESP32 camera in real time."],
+    fields: [
+      { label: "Role", value: "Builder", kind: "plain" },
+      { label: "Hardware", value: "ESP32 camera" },
+      { label: "Live", value: "finalyearproject-frontend-ten.vercel.app", href: "https://finalyearproject-frontend-ten.vercel.app" },
+    ],
+  },
+  {
+    id: "009",
+    title: "Hash Lock dApp",
+    paragraphs: ["A first blockchain project, a hash lock dApp on Nervos CKB, built to learn the Cell model directly."],
+    fields: [
+      { label: "Role", value: "Builder", kind: "plain" },
+      { label: "Chain", value: "Nervos CKB" },
+      { label: "Live", value: "No live link.", kind: "private" },
+    ],
+  },
+  {
+    id: "010",
+    title: "Memory Matching Game",
+    paragraphs: ["A memory matching game built for the MightyMeld hackathon."],
+    fields: [
+      { label: "Role", value: "Builder", kind: "plain" },
+      { label: "Event", value: "MightyMeld hackathon" },
+      { label: "Live", value: "mightymeld-hackathon-delta.vercel.app", href: "https://mightymeld-hackathon-delta.vercel.app" },
+    ],
+  },
+  {
+    id: "011",
+    title: "NIBE Membership Platform",
+    paragraphs: [
+      "Full-stack membership platform for the Nigerian Institute for Biomedical Engineering. Member registration, CPD course information, member profiles, referral tracking, and a blog and resource library the institute runs as its own content.",
+    ],
+    fields: [
+      { label: "Role", value: "Builder, frontend and backend", kind: "plain" },
+      { label: "Stack", value: "React on the frontend, Node.js and Express on the backend, MongoDB" },
+      { label: "Live", value: "biotech-project-frontend.vercel.app", href: "https://biotech-project-frontend.vercel.app" },
+    ],
+  },
 ];

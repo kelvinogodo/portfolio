@@ -1,7 +1,7 @@
 import EntryBlock from "@/components/EntryBlock";
 import IndexRail from "@/components/IndexRail";
 import Ridges from "@/components/Ridges";
-import { CONTACT_EMAIL, CV_FILENAME, CV_PATH, GITHUB, entries, furtherRecord, throughline } from "@/data/entries";
+import { CONTACT_EMAIL, CV_FILENAME, CV_PATH, GITHUB, entries, throughline } from "@/data/entries";
 
 export default function Home() {
   return (
@@ -33,30 +33,6 @@ export default function Home() {
           {entries.map((e) => (
             <EntryBlock key={e.id} entry={e} />
           ))}
-
-          <section className="entry" id="further-record" aria-labelledby="t-further">
-            <div className="entry-head">
-              <div>
-                <p className="entry-label" id="t-further">
-                  FURTHER RECORD
-                </p>
-              </div>
-            </div>
-            <ul className="record">
-              {furtherRecord.map((r) => (
-                <li key={r.text}>
-                  <span className="record-text">{r.text}</span>
-                  {r.link ? (
-                    <a className="btn btn-sm" href={`https://${r.link}`} target="_blank" rel="noopener noreferrer">
-                      {r.link}
-                    </a>
-                  ) : (
-                    <span className="record-link none">No live link</span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </section>
 
           <section className="entry" id="contact" aria-labelledby="t-contact">
             <div className="entry-head">
