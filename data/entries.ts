@@ -26,7 +26,7 @@ export const CV_FILENAME = "Kelvin_Ogodo_CV.pdf";
 export const GITHUB = "github.com/kelvinogodo";
 
 export const throughline =
-  "Self taught since 2020. No computer science degree, no bootcamp cohort. What connects the entries below is one instinct: an idea does not stay an idea long once it reaches him, whether it lands as code, a clothing brand, or a trading system built against a real account.";
+  "Mostly self taught since 2020. The basics of programming, and a learning environment that made the rest possible, came from Listacc Tech Academy. No computer science degree. What connects the entries below is one instinct: an idea does not stay an idea long once it reaches him, whether it lands as code, a clothing brand, or a trading system built against a real account.";
 
 export const entries: Entry[] = [
   {

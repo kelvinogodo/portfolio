@@ -14,7 +14,7 @@ export default function Home() {
           <div className="identity-inner">
             <p className="id-meta resolve" style={{ ["--i" as string]: 0 }}>
               <span>Identity record</span>
-              <span>Self taught since 2020</span>
+              <span>Mostly self taught since 2020</span>
               <span>{entries.length} entries</span>
             </p>
             <h1 className="resolve" style={{ ["--i" as string]: 1 }}>
