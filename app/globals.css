@@ -118,10 +118,26 @@ h1 {
 .ridges path { fill: none; stroke: var(--signal); stroke-width: 1.6; stroke-linecap: round; }
 
 /* ---------- Content column ---------- */
-.col { padding: 0 56px 112px; max-width: 980px; }
+.col { padding: 0 56px; max-width: 980px; }
+
+/* ---------- Bands: entries alternate Paper and Ink ---------- */
+.band { background: var(--paper); color: var(--ink); padding-block: 96px; }
+.band.dark {
+  /* swap the tokens so every rule, label and panel inside inherits the dark scheme */
+  --ink: #ECE9E2;
+  --paper: #14171C;
+  --warm-white: #1B1F26;
+  --line: #2B3038;
+  --steel: #9CA3AF;
+  background: #14171C;
+  color: #ECE9E2;
+}
+.band.dark a:not(.btn) { color: var(--ink); }
+.band.dark a:focus-visible { outline-color: var(--ink); }
+.band.dark .numeral { color: #2B3038; }
 
 /* ---------- Entry ---------- */
-.entry { padding-top: 96px; scroll-margin-top: 0; }
+.entry { scroll-margin-top: 96px; }
 
 .entry-head {
   display: flex;
@@ -197,7 +213,7 @@ h2 {
   max-width: 100%;
   padding: 14px 22px;
   background: var(--signal);
-  color: var(--paper);
+  color: #ECE9E2;
   font-family: var(--mono);
   font-size: 14px;
   font-weight: 500;
@@ -207,7 +223,7 @@ h2 {
   overflow-wrap: anywhere;
   transition: background-color 120ms, color 120ms, border-color 120ms;
 }
-.btn:hover { background: var(--ink); border-color: var(--ink); }
+.btn:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
 /* flow diagram */
@@ -268,8 +284,9 @@ h2 {
   .identity { padding: 40px 16px 48px; }
   .id-meta { margin-bottom: 56px; }
   .ridges { width: 420px; height: 420px; right: -160px; top: auto; bottom: -110px; transform: none; opacity: 0.7; }
-  .col { padding: 0 16px 72px; }
-  .entry { padding-top: 64px; }
+  .col { padding: 0 16px; }
+  .band { padding-block: 64px; }
+  .entry { scroll-margin-top: 64px; }
   .strip { grid-template-columns: 1fr; }
   .cell { padding: 16px 0; }
   .cell + .cell { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }

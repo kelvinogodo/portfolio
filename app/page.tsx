@@ -29,11 +29,16 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="col">
-          {entries.map((e) => (
-            <EntryBlock key={e.id} entry={e} />
-          ))}
+        {entries.map((e, i) => (
+          <div className={i % 2 === 1 ? "band dark" : "band"} key={e.id}>
+            <div className="col">
+              <EntryBlock entry={e} />
+            </div>
+          </div>
+        ))}
 
+        <div className="band dark">
+          <div className="col">
           <section className="entry" id="contact" aria-labelledby="t-contact">
             <div className="entry-head">
               <div>
@@ -71,6 +76,7 @@ export default function Home() {
               </div>
             </dl>
           </section>
+          </div>
         </div>
       </main>
     </div>
