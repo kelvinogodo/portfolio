@@ -25,9 +25,11 @@ export default function Home() {
             <p className="role-line resolve" style={{ ["--i" as string]: 2 }}>
               builder. engineer. founder.
             </p>
-            <p className="throughline resolve" style={{ ["--i" as string]: 3 }}>
-              {throughline}
-            </p>
+            <div className="throughline resolve" style={{ ["--i" as string]: 3 }}>
+              {throughline.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
           </div>
         </header>
 

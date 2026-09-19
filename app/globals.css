@@ -106,6 +106,8 @@ h1 {
   padding-top: 24px;
   border-top: 1px solid #2B3038;
 }
+.throughline p { margin: 0 0 1.25em; }
+.throughline p:last-child { margin-bottom: 0; }
 
 /* the one graphic device: large fingerprint ridge field */
 .ridges {

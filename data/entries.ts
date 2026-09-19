@@ -25,8 +25,10 @@ export const CV_FILENAME = "Kelvin_Ogodo_CV.pdf";
 
 export const GITHUB = "github.com/kelvinogodo";
 
-export const throughline =
-  "I have been mostly self taught since 2020. Listacc Tech Academy gave me the basics of programming and an environment that made learning easy, and I have no computer science degree. What connects the entries below is one instinct: an idea does not stay an idea long once it reaches me, whether it lands as code, a clothing brand, or a trading system built against a real account.";
+export const throughline = [
+  "I started building in 2020, and most of what I know I taught myself. The foundation came from Listacc Tech Academy, which gave me the basics of programming and a place where learning felt natural. I carried that forward through my studies and graduated from the Federal University of Technology Owerri (FUTO).",
+  "What connects the entries below is one instinct: an idea does not stay an idea long once it reaches me, whether it lands as code, a clothing brand, or a trading system built against a real account.",
+];
 
 export const entries: Entry[] = [
   {
