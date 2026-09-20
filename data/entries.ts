@@ -7,7 +7,7 @@ export type Field = {
   href?: string;
 };
 
-export type Entry = {
+type Base = {
   id: string; // "001"
   title: string;
   paragraphs: string[];
@@ -17,6 +17,21 @@ export type Entry = {
   strip?: { label: string; value: string }[];
   flow?: { title: string; where: string; items: string[] }[];
 };
+
+type Meta = {
+  /** Short name for the index rail and mobile menu */
+  short: string;
+  /** What kind of work this is, shown beside the entry number */
+  tag: string;
+  /** "feature" gets the full treatment, "compact" a tighter band */
+  tier: "feature" | "compact";
+  /** One line for the overview list */
+  summary: string;
+  /** Screenshot of the live site, captured from its public URL */
+  shot?: { src: string; alt: string };
+};
+
+export type Entry = Base & Meta & { hasLive: boolean };
 
 export const CONTACT_EMAIL = "kelvinchukwuebuka385@gmail.com";
 
@@ -30,7 +45,7 @@ export const throughline = [
   "What connects the entries below is one instinct: an idea does not stay an idea long once it reaches me, whether it lands as code, a clothing brand, or a trading system built against a real account.",
 ];
 
-export const entries: Entry[] = [
+const baseEntries: Base[] = [
   {
     id: "001",
     title: "Identris Systems",
@@ -171,3 +186,87 @@ export const entries: Entry[] = [
     ],
   },
 ];
+
+const meta: Record<string, Meta> = {
+  "001": {
+    short: "Identris",
+    tag: "Company",
+    tier: "feature",
+    summary: "Government biometric enrollment and onboarding infrastructure",
+    shot: { src: "/shots/identris.jpg", alt: "The Identris Systems company site: a dark green home page headed \"Systems that help your organization scale and stay reliable\"." },
+  },
+  "002": {
+    short: "Nkowa",
+    tag: "Brand",
+    tier: "feature",
+    summary: "A fashion brand and its full commerce backbone",
+    shot: { src: "/shots/nkowa.jpg", alt: "The Nkowa storefront: a warm stone page headed \"Wear who you are.\" with a black and white photograph of a weaver." },
+  },
+  "003": {
+    short: "ESLGSC",
+    tag: "Client work",
+    tier: "feature",
+    summary: "State commission portal with a role based dashboard",
+    shot: { src: "/shots/eslgsc.jpg", alt: "The Ebonyi State Local Government Service Commission portal home page, showing the commission name over a group photograph." },
+  },
+  "004": {
+    short: "Cartly",
+    tag: "Personal build",
+    tier: "compact",
+    summary: "E-commerce storefront built to practice checkout flows",
+    shot: { src: "/shots/cartly.jpg", alt: "The Cartly storefront: a fashion home page with a men's suits banner and a photograph of a man tying a shoe." },
+  },
+  "005": {
+    short: "CityScout",
+    tag: "Client work",
+    tier: "feature",
+    summary: "Real estate listings with an admin dashboard",
+    shot: { src: "/shots/cityscout.jpg", alt: "The CityScout Realtors home page: a black hero headed \"Find a home you'll be proud to own\" with a property search bar." },
+  },
+  "006": {
+    short: "Deriv bot",
+    tag: "Personal build",
+    tier: "feature",
+    summary: "Automated trading system for Deriv, run through MT5",
+  },
+  "007": {
+    short: "E-learning",
+    tag: "Personal build",
+    tier: "compact",
+    summary: "E-learning platform with course browsing and lead capture",
+    shot: { src: "/shots/elearning.jpg", alt: "The product x e-learning home page headed \"Experience interactive learning. Every lesson counts.\" with a course search bar." },
+  },
+  "008": {
+    short: "IoT security",
+    tag: "Final year project",
+    tier: "compact",
+    summary: "Live video and motion alerts from an ESP32 camera",
+    shot: { src: "/shots/iot.jpg", alt: "The surveillance dashboard for the IoT security system, showing a video panel waiting for signal beside an evidence log and settings." },
+  },
+  "009": {
+    short: "Hash lock",
+    tag: "Personal build",
+    tier: "compact",
+    summary: "A first blockchain project on Nervos CKB",
+  },
+  "010": {
+    short: "Memory game",
+    tag: "Hackathon",
+    tier: "compact",
+    summary: "Memory matching game for the MightyMeld hackathon",
+    shot: { src: "/shots/memory.jpg", alt: "The start screen of the memory matching game, with a Play button." },
+  },
+  "011": {
+    short: "NIBE",
+    tag: "Client work",
+    tier: "feature",
+    summary: "Membership platform for the Nigerian Institute for Biomedical Engineering",
+    shot: { src: "/shots/nibe.jpg", alt: "The Nigerian Institute for Biomedical Engineering home page, with a laboratory photograph behind the institute's name." },
+  },
+};
+
+export const entries: Entry[] = baseEntries.map((e) => ({
+  ...e,
+  ...meta[e.id],
+  hasLive: e.fields.some((f) => f.href),
+}));

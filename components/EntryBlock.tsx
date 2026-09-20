@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { Entry } from "@/data/entries";
 
@@ -6,13 +7,15 @@ const step = (i: number) => ({ ["--i" as string]: i }) as CSSProperties;
 export default function EntryBlock({ entry }: { entry: Entry }) {
   const liveLinks = entry.fields.filter((f) => f.href);
   const fields = entry.fields.filter((f) => !f.href);
+  const shotHref = liveLinks[0]?.href;
 
   return (
-    <section className="entry" id={`entry-${entry.id}`} aria-labelledby={`t-${entry.id}`}>
+    <section className={`entry ${entry.tier}`} id={`entry-${entry.id}`} aria-labelledby={`t-${entry.id}`}>
       <div className="entry-head" data-reveal>
         <div>
           <p className="entry-label rv" style={step(0)}>
-            ENTRY {entry.id}
+            <span>ENTRY {entry.id}</span>
+            <span className="entry-tag">{entry.tag}</span>
           </p>
           <h2 id={`t-${entry.id}`} className="rv" style={step(1)}>
             {entry.title}
@@ -32,6 +35,24 @@ export default function EntryBlock({ entry }: { entry: Entry }) {
             </div>
           ))}
         </div>
+      )}
+
+      {entry.shot && (
+        <figure className="shot" data-reveal>
+          {shotHref ? (
+            <a
+              className="rv"
+              href={shotHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open the live site for ${entry.title}`}
+            >
+              <Image src={entry.shot.src} alt={entry.shot.alt} width={1280} height={800} sizes="(max-width: 720px) 100vw, 900px" />
+            </a>
+          ) : (
+            <Image className="rv" src={entry.shot.src} alt={entry.shot.alt} width={1280} height={800} sizes="(max-width: 720px) 100vw, 900px" />
+          )}
+        </figure>
       )}
 
       <div className="body" data-reveal>
