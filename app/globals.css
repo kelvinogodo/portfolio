@@ -459,7 +459,9 @@ h2 {
   .sheet a[aria-current="true"] .sheet-num { color: var(--signal); font-weight: 500; }
 
   .overview { padding-block: 48px 8px; }
-  .ov-row { grid-template-columns: 40px minmax(0, 1fr); padding-inline: 0; margin-inline: 0; }
+  /* let each row run edge to edge, so the hover fill spans the screen and the text keeps its 16px inset */
+  .ov-list li { margin-inline: -16px; }
+  .ov-row { grid-template-columns: 40px minmax(0, 1fr); padding-inline: 16px; margin-inline: 0; }
   .ov-tag, .ov-live { grid-column: 2; text-align: left; }
   .ov-title { font-size: 1.25rem; }
 
