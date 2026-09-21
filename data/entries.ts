@@ -207,7 +207,7 @@ const meta: Record<string, Meta> = {
     tag: "Client work",
     tier: "feature",
     summary: "State commission portal with a role based dashboard",
-    shot: { src: "/shots/eslgsc.jpg", alt: "The Ebonyi State Local Government Service Commission portal home page, showing the commission name over a group photograph." },
+    shot: { src: "/shots/eslgsc.jpg", alt: "The Ebonyi State Local Government Service Commission portal home page: a green themed site with the commission name over a photograph of its building, and a staff sign in button." },
   },
   "004": {
     short: "Cartly",
@@ -241,7 +241,7 @@ const meta: Record<string, Meta> = {
     tag: "Final year project",
     tier: "compact",
     summary: "Live video and motion alerts from an ESP32 camera",
-    shot: { src: "/shots/iot.jpg", alt: "The surveillance dashboard for the IoT security system, showing a video panel waiting for signal beside an evidence log and settings." },
+    shot: { src: "/shots/iot.jpg", alt: "The CamWatch dashboard for the ESP32-CAM security system: a live feed panel waiting for signal beside evidence snapshots, a monitoring window setting and a sync button." },
   },
   "009": {
     short: "Hash lock",
