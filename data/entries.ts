@@ -96,7 +96,7 @@ const baseEntries: Base[] = [
     fields: [
       { label: "Role", value: "Builder", kind: "plain" },
       { label: "Stack", value: "React, Vite, Tailwind CSS, JWT authentication, role based access control" },
-      { label: "Live", value: "eslgsc-frontend-five.vercel.app", href: "https://eslgsc-frontend-five.vercel.app" },
+      { label: "Live", value: "www.ebonyistatelgsc.com", href: "https://www.ebonyistatelgsc.com" },
     ],
   },
   {
